@@ -3,22 +3,26 @@
     width: 100%;
     font-family: 'Montserrat', sans-serif;
     background-color: #FFFFFF;
+    padding:  109px 70px 32px 70px;
+
 }
+
 .hw {
-    min-width:  1280px;
-    padding: 144px 70px 0px 70px;
+    width:  100%;
+    padding-top: 10px;
 }
 
 .hwTitle {
     /* Hometask № 1 */
-    position: absolute;
-    left: 70px;
-    top: 107px;
+    /*position: absolute;*/
+    /*padding-left: 70px;*/
+    /*padding-top: 107px;*/
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
     line-height: 27px;
     transition-property: transform;
+    padding-top: 35px;
 }
 
 .hwTitle:hover {
@@ -30,7 +34,14 @@
     text-shadow: 5px 5px rgba(0, 102, 204, 0.74);
 }
 
-.hw::before {
+.hw:before {
+    content: '';
+    background-color: #D9D9D9;
+    height: 1px;
+    display: block;
+}
+
+.hw:after {
     content: '';
     background-color: #D9D9D9;
     height: 1px;
