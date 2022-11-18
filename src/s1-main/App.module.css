@@ -1,16 +1,12 @@
 .App {
     /*--header_height: 60px;*/
-    min-width: 1280px;
-    min-height: 480px;
+    width: 100%;
     font-family: 'Montserrat', sans-serif;
     background-color: #FFFFFF;
 }
-
 .hw {
-    /*position: absolute;*/
-    padding-top: 144px;
     min-width:  1280px;
-    /*height: 336px;*/
+    padding: 144px 70px 0px 70px;
 }
 
 .hwTitle {
@@ -22,6 +18,16 @@
     font-weight: 600;
     font-size: 22px;
     line-height: 27px;
+    transition-property: transform;
+}
+
+.hwTitle:hover {
+    text-shadow: 1px 1px rgba(0, 102, 204, 0.74);
+    cursor: pointer;
+}
+
+.hwTitle:active {
+    text-shadow: 5px 5px rgba(0, 102, 204, 0.74);
 }
 
 .hw::before {

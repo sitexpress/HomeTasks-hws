@@ -1,8 +1,7 @@
 .sendForm {
     display: flex;
     align-items: center;
-    padding-top: 73px;
-    padding-left: 70px;
+
 }
 
 .textarea {
@@ -21,6 +20,15 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
+    outline:0px none transparent;
+}
+
+.textarea:hover {
+    box-shadow: 0px 5px 20px rgba(29, 33, 38, 0.03), 0px 1px 5px rgba(29, 33, 38, 0.1);
+}
+
+.textarea:focus {
+    border: 1px lightgray solid;
 }
 
 .button {
@@ -40,7 +48,7 @@
 }
 
 .button:hover {
-    background: rgba(0, 102, 204, 0.87);
+    background: rgba(0, 102, 204, 0.74);
 }
 .button:active {
 

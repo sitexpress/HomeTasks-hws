@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     justify-content: flex-start;
-    padding-left: 70px;
+    /*padding-left: 70px;*/
     margin-bottom: 47px;
 }
 
@@ -60,7 +60,7 @@
 .friendTime {
     position: absolute;
     bottom: -18px;
-    left: 80px;
+    left: 10px;
     width: 26px;
     height: 12px;
     font-style: normal;
