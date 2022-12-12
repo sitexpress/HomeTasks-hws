@@ -4,8 +4,6 @@
     font-family: 'Montserrat', sans-serif;
     background-color: #FFFFFF;
     padding:  109px 70px 32px 70px;
-
-
 }
 
 .hw {
@@ -32,6 +30,29 @@
 }
 
 .hwTitle:active {
+    text-shadow: 5px 5px rgba(0, 102, 204, 0.74);
+}
+
+.hwTitle5 {
+    display:flex;
+    justify-content: end;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    transition-property: transform;
+    padding: 17px 70px 0px 0px;
+    /*padding-top: 35px;*/
+    margin-right: calc(-1 * (100vw - 100%));
+
+}
+
+.hwTitle5:hover {
+    text-shadow: 1px 1px rgba(0, 102, 204, 0.74);
+    cursor: pointer;
+}
+
+.hwTitle5:active {
     text-shadow: 5px 5px rgba(0, 102, 204, 0.74);
 }
 
