@@ -1,15 +1,30 @@
 .radio {
+    accent-color: #000000;
+    cursor: pointer;
+}
+
+.radio:last-child {
 }
 
 .radio::before {
 }
 
-
 .radio:checked::before {
+    background: #000000;
 }
 
 .label {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.label:last-child {
+    margin-bottom: 0px;
 }
 
 .options {
+
 }
