@@ -1,33 +1,39 @@
 .sidebar {
-    position: absolute;
+    position: fixed;
     width: 317px;
-    height: 720px;
-    left: -317px;
+    height: 100%;
+    left: 0px;
     top: 0px;
     background: #FFFFFF;
     border-radius: 0px;
     box-shadow: 0px 10px 40px rgba(29, 33, 38, 0.13), 0px 1px 2px rgba(29, 33, 38, 0.1);
     z-index: 3;
     opacity: 100;
-    cursor: default;
 }
 
-.sidebar.open {
-    position: absolute;
-    width: 317px;
-    height: 720px;
-    left: 0px;
-    top: 0px;
-    background: #FFFFFF;
-    border-radius: 0px;
-    box-shadow: 0px 10px 40px rgba(29, 33, 38, 0.13), 0px 1px 2px rgba(29, 33, 38, 0.1);
-    z-index: 2;
-    opacity: 100;
-    cursor: default;
-}
+/*.sidebar.open {*/
+/*    position: static;*/
+/*    width: 317px;*/
+/*    height: 100%;*/
+/*    left: 0px;*/
+/*    top: 0px;*/
+/*    background: #FFFFFF;*/
+/*    border-radius: 0px;*/
+/*    box-shadow: 0px 10px 40px rgba(29, 33, 38, 0.13), 0px 1px 2px rgba(29, 33, 38, 0.1);*/
+/*    z-index: 2;*/
+/*    opacity: 100;*/
+/*}*/
 
 .background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
 
+    background: #000000;
+    opacity: 0.3;
+    z-index: 1;
 }
 
 .nav_block {

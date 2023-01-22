@@ -11,6 +11,7 @@
 .disabled {
     background: #004D99;
     opacity: 0.5;
+    color:white;
 }
 
 /*---------------------*/
@@ -18,16 +19,20 @@
 .secondary {
     background: #0066CC;
     border: none;
+    color:white;
+
 }
 
 .secondary:hover {
     background: #0080FF;
+    color:white;
     border: none;
     outline: none;
 }
 
 .secondary:active {
     background: #0059B3;
+    color:white;
 }
 
 /*---------------------*/
@@ -49,6 +54,7 @@
 
 .default {
     border: 1px solid #0066CC;
+    color:#0066CC;
 }
 
 .default:hover {
@@ -58,6 +64,7 @@
 
 .default:active {
     background: #C9E5FF;
+    color:#0066CC;
 }
 
 

@@ -15,7 +15,7 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
     // const currentPath = location.pathname
     // console.log('currentPath:',currentPath)
     console.log(open)
-    const sidebarClass = s.sidebar + ' ' + `${open ? s.open : ''}`
+    // const sidebarClass = s.sidebar + ' ' + `${open ? s.open : ''}`
     const sidebarNavBlock = s.nav_block + ' ' + `${open ? s.nav_block : ''}`
 
     // const sidebarNavLink = s.nav_link + ' ' + `${currentPath === '/pre-junior' ? s.nav_link_active :
@@ -28,46 +28,48 @@ export const Sidebar: FC<PropsType> = ({open, handleClose}) => {
         <>
             {/*затемнение справа от открытого меню*/}
             {open && <div className={s.background} onClick={handleClose}/>}
+            {open
+                ? <aside className={s.sidebar}>
+                    <button className={s.close} onClick={handleClose}>
+                        <img
+                            src={closeIcon}
+                            alt="close sidebar"
+                            id={'hw5-menu-close'}
+                        />
+                    </button>
 
-            <aside className={sidebarClass}>
-                <button className={s.close} onClick={handleClose}>
-                    <img
-                        src={closeIcon}
-                        alt="close sidebar"
-                        id={'hw5-menu-close'}
-                    />
-                </button>
+                    <nav id={'hw5-menu'} className={s.nav_block }>
+                        <NavLink
+                            id={'hw5-pre-junior-link'}
+                            to={PATH.PRE_JUNIOR}
+                            onClick={handleClose}
+                            className={({isActive}) => isActive ? s.nav_link + ' ' + s.nav_link_active : s.nav_link}
+                            // className={sidebarClass} // делает студент
+                        >
+                            Pre-junior
+                        </NavLink>
+                        <NavLink
+                            id={'hw5-junior-link'}
+                            to={PATH.JUNIOR}
+                            onClick={handleClose}
+                            className={({isActive}) => isActive ? s.nav_link + ' ' + s.nav_link_active : s.nav_link}
+                            // className={sidebarClass} // делает студент
+                        >
+                            Junior
+                        </NavLink>
+                        <NavLink
+                            id={'hw5-junior-plus-link'}
+                            to={PATH.JUNIOR_PLUS}
+                            onClick={handleClose}
+                            className={({isActive}) => isActive ? s.nav_link + ' ' + s.nav_link_active : s.nav_link}
+                            // className={sidebarClass} // делает студент
+                        >
+                            Junior Plus
+                        </NavLink>
+                    </nav>
+                </aside>
+                : ''}
 
-                <nav id={'hw5-menu'} className={sidebarNavBlock}>
-                    <NavLink
-                        id={'hw5-pre-junior-link'}
-                        to={PATH.PRE_JUNIOR}
-                        onClick={handleClose}
-                        className={({isActive}) => isActive ? s.nav_link + ' ' + s.nav_link_active : s.nav_link}
-                        // className={sidebarClass} // делает студент
-                    >
-                        Pre-junior
-                    </NavLink>
-                    <NavLink
-                        id={'hw5-junior-link'}
-                        to={PATH.JUNIOR}
-                        onClick={handleClose}
-                        className={({isActive}) => isActive ? s.nav_link + ' ' + s.nav_link_active : s.nav_link}
-                        // className={sidebarClass} // делает студент
-                    >
-                        Junior
-                    </NavLink>
-                    <NavLink
-                        id={'hw5-junior-plus-link'}
-                        to={PATH.JUNIOR_PLUS}
-                        onClick={handleClose}
-                        className={({isActive}) => isActive ? s.nav_link + ' ' + s.nav_link_active : s.nav_link}
-                        // className={sidebarClass} // делает студент
-                    >
-                        Junior Plus
-                    </NavLink>
-                </nav>
-            </aside>
         </>
     )
 }

@@ -43,8 +43,8 @@
     transition-property: transform;
     padding: 17px 70px 0px 0px;
     /*padding-top: 35px;*/
-    margin-right: calc(-1 * (100vw - 100%));
-
+    /*margin-right: calc(-1 * (100vw - 100%));*/
+    /*margin-top: calc(-1 * (100vh - 100%));*/
 }
 
 .hwTitle5:hover {
