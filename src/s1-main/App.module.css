@@ -2,7 +2,6 @@
     /*--header_height: 60px;*/
     width: 100%;
     font-family: 'Montserrat', sans-serif;
-    background-color: #FFFFFF;
     padding:  109px 70px 32px 70px;
 }
 
@@ -12,10 +11,6 @@
 }
 
 .hwTitle {
-    /* Hometask № 1 */
-    /*position: absolute;*/
-    /*padding-left: 70px;*/
-    /*padding-top: 107px;*/
     font-style: normal;
     font-weight: 600;
     font-size: 22px;

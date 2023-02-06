@@ -1,4 +1,5 @@
 .select {
+    margin-bottom: 244px;
     width: 180px;
     height: 24px;
     background: #FFFFFF;
@@ -13,15 +14,17 @@
 }
 
 .option {
-    /*cursor: pointer;*/
-    /*color:red;*/
-}
-
-.option_active {
-    /*background: #0066CC;*/
+    background: white;
     cursor: pointer;
 }
 
-.option:hover {
-    background: white;
+.option_active {
+
 }
+
+.option:hover {
+
+}
+
+/*background: #0066CC;*/
+/*background: #212A34;*/

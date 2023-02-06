@@ -19,5 +19,14 @@ html {
 }
 
 .select {
+    background: white;
 
+}
+
+.select__header {
+    padding-top: 33px;
+    margin-bottom: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
 }
