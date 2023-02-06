@@ -1,7 +1,10 @@
 .select {
     margin-bottom: 244px;
-    width: 180px;
-    height: 24px;
+    padding: 9px;
+    /*width: 180px;*/
+    /*height: 24px;*/
+    width: 171px;
+    height: 36px;
     background: #FFFFFF;
     border: 1px solid #C2C2C2;
     border-radius: 2px;
@@ -14,8 +17,6 @@
 }
 
 .option {
-    background: white;
-    cursor: pointer;
 }
 
 .option_active {
@@ -23,7 +24,6 @@
 }
 
 .option:hover {
-
 }
 
 /*background: #0066CC;*/

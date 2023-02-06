@@ -19,8 +19,8 @@ html {
 }
 
 .select {
-    background: white;
-
+    width: 171px;
+    height: 36px;
 }
 
 .select__header {
