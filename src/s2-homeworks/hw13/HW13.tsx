@@ -20,7 +20,8 @@ const HW13 = () => {
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
-    const send = (x?: boolean | null) => () => {
+
+    const send = (x?: null | boolean) => () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
@@ -31,84 +32,98 @@ const HW13 = () => {
         setText('')
         setInfo('...loading')
 
-        axios
-            .post(url, {success: x})
-            .then((res) => {
-                setCode('Код 200!')
-                setImage(success200)
-                // дописать
+            axios
+                .post(url, {success: x})
+                .then((res) => {
+                    setCode('Код 200!')
+                    setImage(success200)
+                    // дописать
+                    setText(res.data.errorText)
+                    setInfo(res.data.info)
 
-            })
-            .catch((e) => {
-                // дописать
+                })
+                .catch((e) => {
+                    setText(e.response?.data?.errorText || e.message)
+                    setInfo(e.response?.data?.info || e.name)
 
-            })
+                    if (e.response?.status === 400) {
+                        setCode('Ошибка 400!')
+                        setImage(error400)
+                    } else if (e.response?.status === 500) {
+                        setCode('Ошибка 500!')
+                        setImage(error500)
+                    } else {
+                        setCode('Error!')
+                        setImage(errorUnknown)
+                    }
+                })
     }
 
-    return (
-        <div id={'hw13'}>
-            <div className={s2.hwTitle}>Homework #13</div>
+        return (
+            <div id={'hw13'}>
+                <div className={s2.hwTitle}>Homework #13</div>
 
-            <div className={s2.hw}>
-                <div className={s.buttonsContainer}>
-                    <SuperButton
-                        id={'hw13-send-true'}
-                        onClick={send(true)}
-                        xType={'secondary'}
-                        // дописать
+                <div className={s2.hw}>
+                    <div className={s.buttonsContainer}>
+                        <SuperButton
+                            id={'hw13-send-true'}
+                            onClick={send(true)}
+                            xType={'primary'}
+                            // дописать
 
-                    >
-                        Send true
-                    </SuperButton>
-                    <SuperButton
-                        id={'hw13-send-false'}
-                        onClick={send(false)}
-                        xType={'secondary'}
-                        // дописать
+                        >
+                            Send true
+                        </SuperButton>
+                        <SuperButton
+                            id={'hw13-send-false'}
+                            onClick={send(false)}
+                            xType={'primary'}
+                            // дописать
 
-                    >
-                        Send false
-                    </SuperButton>
-                    <SuperButton
-                        id={'hw13-send-undefined'}
-                        onClick={send(undefined)}
-                        xType={'secondary'}
-                        // дописать
+                        >
+                            Send false
+                        </SuperButton>
+                        <SuperButton
+                            id={'hw13-send-undefined'}
+                            onClick={send(undefined)}
+                            xType={'primary'}
+                            // дописать
 
-                    >
-                        Send undefined
-                    </SuperButton>
-                    <SuperButton
-                        id={'hw13-send-null'}
-                        onClick={send(null)} // имитация запроса на не корректный адрес
-                        xType={'secondary'}
-                        // дописать
+                        >
+                            Send undefined
+                        </SuperButton>
+                        <SuperButton
+                            id={'hw13-send-null'}
+                            onClick={send(null)} // имитация запроса на не корректный адрес
+                            xType={'primary'}
+                            // дописать
 
-                    >
-                        Send null
-                    </SuperButton>
-                </div>
-
-                <div className={s.responseContainer}>
-                    <div className={s.imageContainer}>
-                        {image && <img src={image} className={s.image} alt="status"/>}
+                        >
+                            Send null
+                        </SuperButton>
                     </div>
 
-                    <div className={s.textContainer}>
-                        <div id={'hw13-code'} className={s.code}>
-                            {code}
+                    <div className={s.responseContainer}>
+                        <div className={s.imageContainer}>
+                            {image && <img src={image} className={s.image} alt="status"/>}
                         </div>
-                        <div id={'hw13-text'} className={s.text}>
-                            {text}
-                        </div>
-                        <div id={'hw13-info'} className={s.info}>
-                            {info}
+
+                        <div className={s.textContainer}>
+                            <div id={'hw13-code'} className={s.code}>
+                                {code}
+                            </div>
+                            <div id={'hw13-text'} className={s.text}>
+                                {text}
+                            </div>
+                            <div id={'hw13-info'} className={s.info}>
+                                {info}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
+
 
 export default HW13
