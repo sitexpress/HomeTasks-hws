@@ -15,13 +15,17 @@ import errorUnknown from './images/error.svg'
 * */
 
 const HW13 = () => {
+
     const [code, setCode] = useState('')
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
+    const [btnStatus, setBtnStatus] = useState(false)
+
 
     const send = (x?: null | boolean) => () => {
+        setBtnStatus(true)
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
@@ -35,6 +39,7 @@ const HW13 = () => {
             axios
                 .post(url, {success: x})
                 .then((res) => {
+                    setBtnStatus(false)
                     setCode('Код 200!')
                     setImage(success200)
                     // дописать
@@ -43,6 +48,7 @@ const HW13 = () => {
 
                 })
                 .catch((e) => {
+                    setBtnStatus(false)
                     setText(e.response?.data?.errorText || e.message)
                     setInfo(e.response?.data?.info || e.name)
 
@@ -70,6 +76,7 @@ const HW13 = () => {
                             onClick={send(true)}
                             xType={'primary'}
                             // дописать
+                            disabled={btnStatus}
 
                         >
                             Send true
@@ -79,6 +86,8 @@ const HW13 = () => {
                             onClick={send(false)}
                             xType={'primary'}
                             // дописать
+                            disabled={btnStatus}
+
 
                         >
                             Send false
@@ -88,6 +97,8 @@ const HW13 = () => {
                             onClick={send(undefined)}
                             xType={'primary'}
                             // дописать
+                            disabled={btnStatus}
+
 
                         >
                             Send undefined
@@ -97,6 +108,8 @@ const HW13 = () => {
                             onClick={send(null)} // имитация запроса на не корректный адрес
                             xType={'primary'}
                             // дописать
+                            disabled={btnStatus}
+
 
                         >
                             Send null
