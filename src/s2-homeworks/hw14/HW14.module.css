@@ -1,0 +1,27 @@
+.tech {
+
+}
+
+.input__container {
+    /*position: relative;*/
+    padding-top: 24px;
+}
+
+.loading {
+    padding-top: 19px;
+    /*position: absolute;*/
+    /*width: 47px;*/
+    /*height: 16px;*/
+    /*left: 491px;*/
+    /*top: 236px;*/
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #4D4D4D;
+}
+
