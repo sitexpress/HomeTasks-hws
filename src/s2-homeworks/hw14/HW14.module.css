@@ -1,4 +1,11 @@
 .tech {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    color: #000000;
 
 }
 
@@ -9,12 +16,6 @@
 
 .loading {
     padding-top: 19px;
-    /*position: absolute;*/
-    /*width: 47px;*/
-    /*height: 16px;*/
-    /*left: 491px;*/
-    /*top: 236px;*/
-
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
@@ -23,5 +24,9 @@
     display: flex;
     align-items: center;
     color: #4D4D4D;
+}
+
+.mapped_techs_wrapper {
+    margin-bottom: 113px;
 }
 

@@ -39,9 +39,10 @@ const HW14 = () => {
                 // сохранить пришедшие данные
                 setLoading(true)
                 setTechs(response.data.techs)
-                // console.log(res)
+                setLoading(false)
+
             })
-        setLoading(false)
+
     }
 
     const onChangeText = (value: string) => {
@@ -69,24 +70,21 @@ const HW14 = () => {
     return (
         <div id={'hw14'}>
             <div className={s2.hwTitle}>Homework #14</div>
-            <button onClick={() => sendQuery('')}>Button sendQuery</button>
             <div className={s2.hw}>
                 <div className={s.input__container}>
-
+                    <SuperDebouncedInput
+                        id={'hw14-super-debounced-input'}
+                        value={find}
+                        onChangeText={onChangeText}
+                        onDebouncedChange={sendQuery}
+                    />
                 </div>
-
-                <SuperDebouncedInput
-                    id={'hw14-super-debounced-input'}
-                    value={find}
-                    onChangeText={onChangeText}
-                    onDebouncedChange={sendQuery}
-                />
 
                 <div id={'hw14-loading'} className={s.loading}>
                     {isLoading ? '...ищем' : <br/>}
                 </div>
 
-                {mappedTechs}
+                <div className={s.mapped_techs_wrapper}>{mappedTechs}</div>
             </div>
         </div>
     )
