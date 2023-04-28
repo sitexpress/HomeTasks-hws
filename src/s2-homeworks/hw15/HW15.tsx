@@ -10,9 +10,9 @@ import SuperSort from './common/c10-SuperSort/SuperSort'
 * 1 - дописать SuperPagination
 * 2 - дописать SuperSort
 * 3 - проверить pureChange тестами
-* 3 - дописать sendQuery, onChangePagination --1, onChangeSort в HW15
-* 4 - сделать стили в соответствии с дизайном --0.5
-* 5 - добавить HW15 в HW5/pages/JuniorPlus --1
+* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
+* 4 - сделать стили в соответствии с дизайном
+* 5 - добавить HW15 в HW5/pages/JuniorPlus
 * */
 
 type TechType = {
@@ -51,59 +51,30 @@ const HW15 = () => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
-                // делает студент
-                console.log('getTechs',res)
-                // сохранить пришедшие данные
                 if (res) {
-                    setTechs(res.data.techs)
                     setLoading(false)
+                    setTotalCount(res.data.totalCount)
+                    setTechs(res.data.techs)
                 }
-
-                //
             })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
-
-        // setPage(
-        // setCount(
         setPage(newPage)
         setCount(newCount)
 
-
-        // sendQuery(
+        sendQuery({sort: sort, page: newPage, count: newCount})
         // setSearchParams(
-
-
-        // const pageQ  = newPage !== 1 ? {page: newPage + ''} : ''
-        // const newCountQ  = newPage !== 4 ? {count: newCount + ''} : ''
-        //
-        // const {count, page, sort, ...lastQ} = Object.fromEntries(searchParams)
-        // const allQ = { ...lastQ, ...pageQ, ...newCountQ }
-        //
-        //
-        // sendQuery(allQ)
-        // setSearchParams(allQ)
-
-        sendQuery({sort, page: newPage, count: newCount, })
-        setSearchParams({sort, page: String(newPage), count: String(newCount) })
 
         //
     }
 
     const onChangeSort = (newSort: string) => {
-        // делает студент
-
-        // setSort(
-        // setPage(1) // при сортировке сбрасывать на 1 страницу
         setSort(newSort)
-        setPage(1)
-        // sendQuery(
-        // setSearchParams(
+        setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        sendQuery({page: 1, count: count, sort: newSort})
-        setSearchParams({sort: newSort, page: "1", count: String(count)})
+        sendQuery({sort: newSort, page: 1, count: count})
     }
 
     useEffect(() => {
@@ -130,7 +101,7 @@ const HW15 = () => {
             <div className={s2.hwTitle}>Homework #15</div>
 
             <div className={s2.hw}>
-                {/*{idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}*/}
+                {idLoading && <div id={'hw15-loading'} className={s.loading}>Loading...</div>}
 
                 <SuperPagination
                     page={page}
