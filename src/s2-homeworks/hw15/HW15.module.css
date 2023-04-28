@@ -1,0 +1,52 @@
+.tech {
+    display: flex;
+    align-items: center;
+    width: 50vw;
+}
+
+.developer {
+    display: flex;
+    align-items: center;
+    width: 50vw;
+}
+
+.techHeader {
+    display: flex;
+    align-items: center;
+    width: 50vw;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.developerHeader {
+    display: flex;
+    align-items: center;
+    width: 50vw;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.row {
+    display: flex;
+}
+
+.rowHeader {
+    display: flex;
+    /*align-items: center;*/
+}
+
+.loading {
+
+}
+
+.superSort {
+    padding-left: 8px;
+    cursor:pointer;
+}
+

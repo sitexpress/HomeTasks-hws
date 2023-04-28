@@ -11,7 +11,7 @@ type DefaultSelectPropsType = DetailedHTMLProps<
 >
 type ThemesType= {
     id: number
-    value: string
+    value: number | string
 }
 
 type SuperSelectPropsType = DefaultSelectPropsType & {

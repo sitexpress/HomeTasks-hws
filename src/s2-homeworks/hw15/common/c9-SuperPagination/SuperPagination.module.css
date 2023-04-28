@@ -1,0 +1,15 @@
+.pagination {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+    height:92px;
+}
+
+.text1 {
+
+}
+
+.text2 {
+
+}
